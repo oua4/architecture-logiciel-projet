@@ -1,5 +1,5 @@
 public class Species{
-    private String speciesCharacter;
+    private final String speciesCharacter;
     private String dominantStat;
 
     public Species(String speciesCharacter){
