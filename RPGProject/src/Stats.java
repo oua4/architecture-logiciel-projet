@@ -42,4 +42,9 @@ public class Stats{
     public int getCharisma() {
         return charisma;
     }
+
+    public int getModifier(int stat) {
+        int modifier = (stat - 10) / 2;
+        return (int) Math.floor(modifier);
+    }
 }
