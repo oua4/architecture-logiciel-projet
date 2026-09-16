@@ -21,7 +21,7 @@ public class Name{
                 name.length() >= 2 && name.length() <= 30 &&
                 name.matches(regex) &&
                 !getFirstLetter(name).equals(" ") && !getLastLetter(name).equals(" ") &&
-                !names.contains(name)
+                !names.contains(name) //Problème dans la contrainte des noms uniques
         ) {
             this.name = name;
             names.add(this.name);
