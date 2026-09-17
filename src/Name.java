@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Name{
     private String name;
-    private ArrayList<String> names = new ArrayList<>();
 
     String regex = "^[a-zA-ZÀ-ÿ ]+$";
 
@@ -20,11 +19,9 @@ public class Name{
         if(
                 name.length() >= 2 && name.length() <= 30 &&
                 name.matches(regex) &&
-                !getFirstLetter(name).equals(" ") && !getLastLetter(name).equals(" ") &&
-                !names.contains(name) //Problème dans la contrainte des noms uniques
+                !getFirstLetter(name).equals(" ") && !getLastLetter(name).equals(" ")
         ) {
             this.name = name;
-            names.add(this.name);
         } else {
             throw new CharacterNameInvalidException(name);
         }
