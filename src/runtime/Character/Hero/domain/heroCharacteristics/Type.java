@@ -3,7 +3,7 @@ package runtime.Character.Hero.domain.heroCharacteristics;
 import runtime.Character.Hero.domain.exceptions.TypeNameInvalidException;
 
 public class Type{
-    private final String heroType;
+    private String heroType;
     private String dominantStat;
 
     public Type(String heroType){
@@ -31,6 +31,32 @@ public class Type{
             case "cleric":
                 this.dominantStat = "wisdom";
                 break;
+        }
+    }
+
+    public int getBaseLifePoints() {
+        switch(this.heroType) {
+            case "warrior" :
+                return 12;
+            case "archer", "cleric":
+                return 10;
+            case "mage" :
+                return 6;
+            default:
+                throw new TypeNameInvalidException(heroType);
+        }
+    }
+
+    public int getMagicLifePoints() {
+        switch(this.heroType) {
+            case "warrior", "archer" :
+                return 0;
+            case "mage" :
+                return 10;
+            case "cleric" :
+                return 8;
+            default:
+                throw new TypeNameInvalidException(heroType);
         }
     }
 }
