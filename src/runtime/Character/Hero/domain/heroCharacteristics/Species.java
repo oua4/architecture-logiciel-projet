@@ -1,20 +1,23 @@
-public class Species{
-    private final String speciesCharacter;
-    private String dominantStat;
+package runtime.Character.Hero.domain.heroCharacteristics;
 
-    public Species(String speciesCharacter){
-        if (speciesCharacter.equalsIgnoreCase("human") ||
-                speciesCharacter.equalsIgnoreCase("elf") ||
-                speciesCharacter.equalsIgnoreCase("dwarf") ||
-                speciesCharacter.equalsIgnoreCase("orc")) {
-            this.speciesCharacter = speciesCharacter.toLowerCase();
+import runtime.Character.Hero.domain.exceptions.SpeciesNameInvalidException;
+
+public class Species{
+    private final String heroSpecies;
+
+    public Species(String heroSpecies){
+        if (heroSpecies.equalsIgnoreCase("human") ||
+                heroSpecies.equalsIgnoreCase("elf") ||
+                heroSpecies.equalsIgnoreCase("dwarf") ||
+                heroSpecies.equalsIgnoreCase("orc")) {
+            this.heroSpecies = heroSpecies.toLowerCase();
         } else {
-            throw new SpeciesNameInvalidException(speciesCharacter);
+            throw new SpeciesNameInvalidException(heroSpecies);
         }
     }
 
     public void applySpeciesStats(Stats stats) {
-        switch (this.speciesCharacter) {
+        switch (this.heroSpecies) {
             case "human":
                 stats.addStrength(1);
                 stats.addDexterity(1);

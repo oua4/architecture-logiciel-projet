@@ -1,3 +1,7 @@
+package runtime.Character.Hero.domain.heroCharacteristics;
+
+import runtime.Character.Hero.domain.exceptions.StatNumberInvalidException;
+
 public class Stats{
     private int strength, dexterity, constitution, intelligence, wisdom, charisma;
 

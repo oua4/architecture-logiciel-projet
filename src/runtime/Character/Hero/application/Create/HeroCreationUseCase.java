@@ -3,7 +3,7 @@ package runtime.Character.Hero.application.Create;
 import runtime.Character.Hero.application.port.HeroRepository;
 import runtime.Character.Hero.domain.Hero;
 import runtime.Character.Hero.domain.HeroFactory;
-import runtime.Character.Hero.domain.exception.HeroNameAlreadyInUseException;
+import runtime.Character.Hero.domain.exceptions.HeroNameAlreadyInUseException;
 
 public class HeroCreationUseCase {
 

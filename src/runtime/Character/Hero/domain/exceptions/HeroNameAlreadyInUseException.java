@@ -1,4 +1,4 @@
-package runtime.Character.Hero.domain.exception;
+package runtime.Character.Hero.domain.exceptions;
 
 public class HeroNameAlreadyInUseException extends RuntimeException {
     public HeroNameAlreadyInUseException(String name) {

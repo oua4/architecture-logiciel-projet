@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+package runtime.Character.Hero.domain.heroCharacteristics;
+
+import runtime.Character.Hero.domain.exceptions.CharacterNameInvalidException;
 
 public class Name{
     private String name;
