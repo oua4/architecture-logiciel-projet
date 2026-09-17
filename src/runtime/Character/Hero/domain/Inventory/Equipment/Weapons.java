@@ -1,3 +1,5 @@
+package runtime.Character.Hero.domain.Inventory.Equipment;
+
 public class Weapons {
     private String weaponName;
     private String weaponDamage;

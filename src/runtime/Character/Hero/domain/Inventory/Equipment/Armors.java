@@ -1,3 +1,5 @@
+package runtime.Character.Hero.domain.Inventory.Equipment;
+
 public class Armors {
     private String armorProtection;
     private String armorClass;
