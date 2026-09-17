@@ -15,7 +15,7 @@ public class Species{
 
     public void applySpeciesStats(Stats stats) {
         switch (this.speciesCharacter) {
-            case "humain":
+            case "human":
                 stats.addStrength(1);
                 stats.addDexterity(1);
                 stats.addConstitution(1);

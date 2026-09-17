@@ -1,0 +1,31 @@
+package runtime.Character.Hero.application.Create;
+
+import runtime.Character.Hero.application.port.HeroRepository;
+import runtime.Character.Hero.domain.Hero;
+import runtime.Character.Hero.domain.HeroFactory;
+import runtime.Character.Hero.domain.exception.HeroNameAlreadyInUseException;
+
+public class HeroCreationUseCase {
+
+    private final HeroRepository heroRepository;
+    private final HeroFactory heroFactory;
+
+
+    public HeroCreationUseCase(HeroRepository heroRepository, HeroFactory heroFactory) {
+        this.heroRepository = heroRepository;
+        this.heroFactory = heroFactory;
+    }
+
+
+    public Hero execute(HeroCreationCommand command) {
+        if (heroRepository.isNameTaken(command.name())) {
+            throw new HeroNameAlreadyInUseException(command.name());
+        }
+
+        Hero hero = heroFactory.create(command);
+
+        heroRepository.save(hero);
+
+        return hero;
+    }
+}
