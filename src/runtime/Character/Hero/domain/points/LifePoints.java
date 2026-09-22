@@ -8,7 +8,7 @@ public class LifePoints {
     private int maxLifePoints;
 
     public LifePoints(Type type, Stats stats) {
-        int maxPoints = type.getBaseLifePoints() + stats.getModifier(stats.getConstitution());
+        int maxPoints = type.getBaseLifePoints() + stats.getModifier(stats.getConstitutionModifier());
         this.maxLifePoints = Math.max(1, maxPoints);
 
         this.currentLifePoints = this.maxLifePoints;

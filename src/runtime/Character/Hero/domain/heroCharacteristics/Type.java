@@ -4,7 +4,6 @@ import runtime.Character.Hero.domain.exceptions.TypeNameInvalidException;
 
 public class Type{
     private String heroType;
-    private String dominantStat;
 
     public Type(String heroType){
         if (heroType.equalsIgnoreCase("warrior") ||
@@ -18,18 +17,19 @@ public class Type{
     }
 
     public void applyHeroTypeDominantStat() {
+        String dominantStat;
         switch (this.heroType) {
             case "warrior":
-                this.dominantStat = "strength";
+                dominantStat = "strength";
                 break;
             case "archer":
-                this.dominantStat = "dexterity";
+                dominantStat = "dexterity";
                 break;
             case "mage":
-                this.dominantStat = "intelligence";
+                dominantStat = "intelligence";
                 break;
             case "cleric":
-                this.dominantStat = "wisdom";
+                dominantStat = "wisdom";
                 break;
         }
     }

@@ -17,7 +17,6 @@ public class Name{
 
 
     public Name(String name) {
-
         if(
                 name.length() >= 2 && name.length() <= 30 &&
                 name.matches(regex) &&
