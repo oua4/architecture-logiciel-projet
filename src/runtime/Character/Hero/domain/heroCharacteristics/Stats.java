@@ -26,76 +26,56 @@ public class Stats{
 
     }
 
-    public int getStrength() {
-        return strength;
+    public void addStrength(int number) {
+        strength += number;
     }
 
-    public int addStrength(int number) {
-        return strength += number;
+    public void subStrength(int number) {
+        strength -= number;
     }
 
-    public int subStrength(int number) {
-        return strength -= number;
+    public void addDexterity(int number) {
+        dexterity += number;
     }
 
-    public int getDexterity() {
-        return dexterity;
-    }
-
-    public int addDexterity(int number) {
-        return dexterity += number;
-    }
-
-    public int subDexterity(int number) {
-        return dexterity -= number;
+    public void subDexterity(int number) {
+        dexterity -= number;
     }
 
     public int getConstitution() {
         return constitution;
     }
 
-    public int addConstitution(int number) {
-        return constitution += number;
+    public void addConstitution(int number) {
+        constitution += number;
     }
 
-    public int subConstitution(int number) {
-        return constitution -= number;
-    }
-
-    public int getIntelligence() {
-        return intelligence;
+    public void subConstitution(int number) {
+        constitution -= number;
     }
 
     public int addIntelligence(int number) {
         return intelligence += number;
     }
 
-    public int subIntelligence(int number) {
-        return intelligence -= number;
+    public void subIntelligence(int number) {
+        intelligence -= number;
     }
 
-    public int getWisdom() {
-        return wisdom;
+    public void addWisdom(int number) {
+        wisdom += number;
     }
 
-    public int addWisdom(int number) {
-        return wisdom += number;
+    public void subWisdom(int number) {
+        wisdom -= number;
     }
 
-    public int subWisdom(int number) {
-        return wisdom -= number;
+    public void addCharisma(int number) {
+        charisma += number;
     }
 
-    public int getCharisma() {
-        return charisma;
-    }
-
-    public int addCharisma(int number) {
-        return charisma += number;
-    }
-
-    public int subCharisma(int number) {
-        return charisma -= number;
+    public void subCharisma(int number) {
+        charisma -= number;
     }
 
     public int getModifier(int stat) {

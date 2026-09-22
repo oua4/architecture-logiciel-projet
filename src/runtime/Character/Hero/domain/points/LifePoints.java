@@ -8,9 +8,19 @@ public class LifePoints {
     private int maxLifePoints;
 
     public LifePoints(Type type, Stats stats) {
-        this.maxLifePoints = type.getBaseLifePoints() + stats.getConstitution(); //Je dois enlever le getter plus tard
-        this.currentLifePoints = ;
+        int maxPoints = type.getBaseLifePoints() + stats.getModifier(stats.getConstitution());
+        this.maxLifePoints = Math.max(1, maxPoints);
 
-
+        this.currentLifePoints = this.maxLifePoints;
     }
+
+    public boolean isKnockedOut() {
+        return this.currentLifePoints == 0;
+    }
+
+    public boolean canAct() {
+        return this.currentLifePoints >= 1;
+    }
+
+    //takeDamage et heal à venir
 }

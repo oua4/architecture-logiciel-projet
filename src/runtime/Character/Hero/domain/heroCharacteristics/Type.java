@@ -47,7 +47,7 @@ public class Type{
         }
     }
 
-    public int getMagicLifePoints() {
+    public int getBaseMagicPoints() {
         switch(this.heroType) {
             case "warrior", "archer" :
                 return 0;
@@ -59,4 +59,5 @@ public class Type{
                 throw new TypeNameInvalidException(heroType);
         }
     }
+
 }
