@@ -8,4 +8,9 @@ public class Hero {
     public UUID getUuid() {
         return uuid;
     }
+
+
+    public int getCurrentHp() {
+        return 0;
+    }
 }
