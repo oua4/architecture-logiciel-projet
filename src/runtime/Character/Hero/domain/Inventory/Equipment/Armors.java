@@ -7,15 +7,19 @@ public class Armors {
     private String armorProtection;
     private int armorClass;
 
+    public static final String NO_ARMOR = "Sans armure";
+    public static final String LEATHER_ARMOR = "Armure de cuir";
+    public static final String CHAINMAIL_ARMOR = "Armure de mailles";
+
     public Armors(String armorProtection, Stats stats){
-        if (armorProtection.equalsIgnoreCase("Sans armure")) {
-            this.armorProtection = "Sans armure";
+        if (armorProtection.equalsIgnoreCase(Armors.NO_ARMOR)) {
+            this.armorProtection = Armors.NO_ARMOR;
             this.armorClass = 10 + stats.getDexterityModifier();
-        } else if (armorProtection.equalsIgnoreCase("Armure de cuir")) {
-            this.armorProtection = "Armure de cuir";
+        } else if (armorProtection.equalsIgnoreCase(Armors.LEATHER_ARMOR)) {
+            this.armorProtection = Armors.LEATHER_ARMOR;
             this.armorClass = 11 + stats.getDexterityModifier();
-        } else if (armorProtection.equalsIgnoreCase("Armure de mailles")) {
-            this.armorProtection = "Armure de mailles";
+        } else if (armorProtection.equalsIgnoreCase(Armors.CHAINMAIL_ARMOR)) {
+            this.armorProtection = Armors.CHAINMAIL_ARMOR;
             this.armorClass = 16;
         }
     }
