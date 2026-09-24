@@ -1,37 +1,45 @@
 package runtime.Character.Hero.domain.Inventory.Equipment;
 
+import runtime.Character.Hero.domain.exceptions.WeaponNameInvalidException;
 
 public class Weapons {
-    private String weaponName;
-    private String weaponDamage;
-    private String weaponStat;
+    public static final String LONG_SWORD = "Épée longue";
+    public static final String AXE = "Hache";
+    public static final String MACE = "Masse";
+    public static final String DAGGER = "Dague";
+    public static final String BOW = "Arc";
+    public static final String STICK = "Bâton";
+
+    private final String weaponName;
+    private final String weaponDamage;
+    private final String weaponStat;
 
     public Weapons(String weaponName) {
-        if (weaponName.equalsIgnoreCase("Épée longue")) {
-            this.weaponName = "Épée longue";
+        if (weaponName.equalsIgnoreCase(LONG_SWORD)) {
+            this.weaponName = LONG_SWORD;
             this.weaponDamage = "1d8";
             this.weaponStat = "Force";
-        } else if (weaponName.equalsIgnoreCase("Hache")) {
-            this.weaponName = "Hache";
+        } else if (weaponName.equalsIgnoreCase(AXE)) {
+            this.weaponName = AXE;
             this.weaponDamage = "1d10";
             this.weaponStat = "Force";
-        } else if (weaponName.equalsIgnoreCase("Masse")) {
-            this.weaponName = "Masse";
+        } else if (weaponName.equalsIgnoreCase(MACE)) {
+            this.weaponName = MACE;
             this.weaponDamage = "1d6";
             this.weaponStat = "Force";
-        } else if (weaponName.equalsIgnoreCase("Dague")) {
-            this.weaponName = "Dague";
+        } else if (weaponName.equalsIgnoreCase(DAGGER)) {
+            this.weaponName = DAGGER;
             this.weaponDamage = "1d4";
             this.weaponStat = "Dextérité";
-        } else if (weaponName.equalsIgnoreCase("Arc")) {
-            this.weaponName = "Arc";
+        } else if (weaponName.equalsIgnoreCase(BOW)) {
+            this.weaponName = BOW;
             this.weaponDamage = "1d8";
             this.weaponStat = "Dextérité";
-        } else if (weaponName.equalsIgnoreCase("Bâton")) {
-            this.weaponName = "Bâton";
+        } else if (weaponName.equalsIgnoreCase(STICK)) {
+            this.weaponName = STICK;
             this.weaponDamage = "1d6";
             this.weaponStat = "Force";
-        }
+        } else throw new WeaponNameInvalidException(weaponName);
     }
 
     public String getWeaponName() {

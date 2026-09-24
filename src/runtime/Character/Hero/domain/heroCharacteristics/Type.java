@@ -1,8 +1,11 @@
 package runtime.Character.Hero.domain.heroCharacteristics;
 
 import runtime.Character.Hero.domain.exceptions.TypeNameInvalidException;
+import runtime.Character.Hero.domain.exceptions.EquipmentDoesNotMatchTypeException;
+import runtime.Character.Hero.domain.Inventory.Equipment.Weapons;
+import runtime.Character.Hero.domain.Inventory.Equipment.Armors;
 
-public class Type{
+public class Type {
     private String heroType;
 
     public Type(String heroType){
@@ -60,4 +63,46 @@ public class Type{
         }
     }
 
+    public boolean canEquip(Weapons weapon) {
+        String name = weapon.getWeaponName();
+        if (this.heroType.equalsIgnoreCase("warrior")) {
+            return !name.equalsIgnoreCase(Weapons.BOW); // tout sauf Arc
+        } else if (this.heroType.equalsIgnoreCase("archer")) {
+            return name.equalsIgnoreCase(Weapons.BOW) ||
+                    name.equalsIgnoreCase(Weapons.DAGGER) ||
+                    name.equalsIgnoreCase(Weapons.LONG_SWORD);
+        } else if (this.heroType.equalsIgnoreCase("mage")) {
+            return name.equalsIgnoreCase(Weapons.STICK) ||
+                    name.equalsIgnoreCase(Weapons.DAGGER);
+        } else if (this.heroType.equalsIgnoreCase("cleric")) {
+            return name.equalsIgnoreCase(Weapons.MACE) ||
+                    name.equalsIgnoreCase(Weapons.STICK);
+        }
+        return false;
+    }
+
+    public boolean canEquip(Armors armor) {
+        String protection = armor.getArmorProtection();
+        if (this.heroType.equalsIgnoreCase("warrior") || this.heroType.equalsIgnoreCase("cleric")) {
+            return protection.equalsIgnoreCase(Armors.LEATHER_ARMOR) ||
+                    protection.equalsIgnoreCase(Armors.CHAINMAIL_ARMOR);
+        } else if (this.heroType.equalsIgnoreCase("archer")) {
+            return protection.equalsIgnoreCase(Armors.LEATHER_ARMOR);
+        } else if (this.heroType.equalsIgnoreCase("mage")) {
+            return false;
+        }
+        return false;
+    }
+
+    public void equip(Weapons weapon) {
+        if (!canEquip(weapon)) {
+            throw new EquipmentDoesNotMatchTypeException(weapon.getWeaponName(), this.heroType);
+        }
+    }
+
+    public void equip(Armors armor) {
+        if (!canEquip(armor)) {
+            throw new EquipmentDoesNotMatchTypeException(armor.getArmorProtection(), this.heroType);
+        }
+    }
 }

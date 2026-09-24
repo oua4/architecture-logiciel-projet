@@ -1,30 +1,33 @@
 package runtime.Character.Hero.domain.Inventory.Equipment;
 
-
-import runtime.Character.Hero.domain.heroCharacteristics.Stats;
+import runtime.Character.Hero.domain.exceptions.ArmorProtectionInvalidException;
 
 public class Armors {
-    private String armorProtection;
-    private int armorClass;
+    public static final String NO_ARMOR = "Sans armure";
+    public static final String LEATHER_ARMOR = "Armure de cuir";
+    public static final String CHAINMAIL_ARMOR = "Armure de mailles";
 
-    public Armors(String armorProtection, Stats stats){
-        if (armorProtection.equalsIgnoreCase("Sans armure")) {
-            this.armorProtection = "Sans armure";
-            this.armorClass = 10 + stats.getDexterityModifier();
-        } else if (armorProtection.equalsIgnoreCase("Armure de cuir")) {
-            this.armorProtection = "Armure de cuir";
-            this.armorClass = 11 + stats.getDexterityModifier();
-        } else if (armorProtection.equalsIgnoreCase("Armure de mailles")) {
-            this.armorProtection = "Armure de mailles";
-            this.armorClass = 16;
-        }
+    private final String armorProtection;
+    private final String armorClass;
+
+    public Armors(String armorProtection){
+        if (armorProtection.equalsIgnoreCase(NO_ARMOR)) {
+            this.armorProtection = NO_ARMOR;
+            this.armorClass = "10 + modificateur de Dextérité";
+        } else if (armorProtection.equalsIgnoreCase(LEATHER_ARMOR)) {
+            this.armorProtection = LEATHER_ARMOR;
+            this.armorClass = "11 + modificateur de Dextérité";
+        } else if (armorProtection.equalsIgnoreCase(CHAINMAIL_ARMOR)) {
+            this.armorProtection = CHAINMAIL_ARMOR;
+            this.armorClass = "16 (sans bonus de Dextérité)";
+        } else throw new ArmorProtectionInvalidException(armorProtection);
     }
 
     public String getArmorProtection() {
         return armorProtection;
     }
 
-    public int getArmorClass() {
+    public String getArmorClass() {
         return armorClass;
     }
 }
