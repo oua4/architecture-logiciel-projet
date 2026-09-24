@@ -1,15 +1,18 @@
 package runtime.Lobby.domain;
 
-import runtime.Lobby.domain.exceptions.NumberHeroesExceedMaximum;
+import runtime.Lobby.domain.exceptions.NumberPlayersExceedMaximum;
+import runtime.Player.domain.Player;
+
+import java.util.ArrayList;
 
 public class Lobby {
-    private String[] lobby;
+    private ArrayList<Player> playersInLobby = new ArrayList<>();
 
-    public Lobby(String[] lobby) {
-        this.lobby = lobby;
-
-        if (lobby.length > 4) {
-            throw new NumberHeroesExceedMaximum(lobby);
+    public Lobby(Player player) {
+        if (playersInLobby.size() <= 4) {
+            playersInLobby.add(player);
+        } else {
+            throw new NumberPlayersExceedMaximum();
         }
     }
 }

@@ -3,10 +3,10 @@ package runtime.Character.Hero.domain;
 import java.util.UUID;
 
 public class Hero {
-    UUID uuid;
+    private UUID heroUuid;
 
-    public UUID getUuid() {
-        return uuid;
+    public UUID getHeroUuid() {
+        return heroUuid;
     }
 
 
