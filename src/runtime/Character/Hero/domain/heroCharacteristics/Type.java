@@ -1,6 +1,7 @@
 package runtime.Character.Hero.domain.heroCharacteristics;
 
 import runtime.Character.Hero.domain.exceptions.TypeNameInvalidException;
+import runtime.Character.Hero.domain.exceptions.EquipmentDoesNotMatchTypeException;
 import runtime.Character.Hero.domain.Inventory.Equipment.Weapons;
 import runtime.Character.Hero.domain.Inventory.Equipment.Armors;
 
@@ -91,6 +92,18 @@ public class Type{
             return false;
         }
         return false;
+    }
+
+    public void equip(Weapons weapon) {
+        if (!canEquip(weapon)) {
+            throw new EquipmentDoesNotMatchTypeException(weapon.getWeaponName(), this.heroType);
+        }
+    }
+
+    public void equip(Armors armor) {
+        if (!canEquip(armor)) {
+            throw new EquipmentDoesNotMatchTypeException(armor.getArmorProtection(), this.heroType);
+        }
     }
 
 }
