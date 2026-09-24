@@ -6,6 +6,7 @@ import runtime.Character.Hero.domain.heroCharacteristics.Type;
 public class LifePoints {
     private int currentLifePoints;
     private int maxLifePoints;
+    private int healAmount; // résultat des dés + 2
 
     public LifePoints(Type type, Stats stats) {
         int maxPoints = type.getBaseLifePoints() + stats.getModifier(stats.getConstitutionModifier());
@@ -22,12 +23,14 @@ public class LifePoints {
         return this.currentLifePoints >= 1;
     }
 
-    public int getCurrentLifePoints(){
-        return this.currentLifePoints;
+    public boolean isExcessHealing() {
+        return this.healAmount >= this.maxLifePoints;
     }
 
-    public int getMaxLifePoints(){
-        return this.maxLifePoints;
+    public void heal(){
+        if(!isExcessHealing()){
+            currentLifePoints += this.healAmount;
+        }
     }
 
     //takeDamage et heal à venir

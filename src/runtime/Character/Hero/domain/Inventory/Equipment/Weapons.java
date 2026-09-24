@@ -1,11 +1,10 @@
 package runtime.Character.Hero.domain.Inventory.Equipment;
 
-import runtime.Character.Hero.domain.exceptions.WeaponNameInvalidException;
 
 public class Weapons {
-    private final String weaponName;
-    private final String weaponDamage;
-    private final String weaponStat;
+    private String weaponName;
+    private String weaponDamage;
+    private String weaponStat;
 
     public Weapons(String weaponName) {
         if (weaponName.equalsIgnoreCase("Épée longue")) {
@@ -32,7 +31,7 @@ public class Weapons {
             this.weaponName = "Bâton";
             this.weaponDamage = "1d6";
             this.weaponStat = "Force";
-        } else throw new WeaponNameInvalidException(weaponName);
+        }
     }
 
     public String getWeaponName() {
