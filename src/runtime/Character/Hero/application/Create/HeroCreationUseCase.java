@@ -18,8 +18,8 @@ public class HeroCreationUseCase {
 
 
     public Hero execute(HeroCreationCommand command) {
-        if (heroRepository.isNameTaken(command.name())) {
-            throw new HeroNameAlreadyInUseException(command.name());
+        if (heroRepository.isNameTaken(command.heroName())) {
+            throw new HeroNameAlreadyInUseException(command.heroName());
         }
 
         Hero hero = heroFactory.create(command);

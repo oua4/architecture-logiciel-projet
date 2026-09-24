@@ -18,6 +18,7 @@ public class CreatePlayerUseCase {
         Player newPlayer = new Player(newPlayerId, playerName);
 
         playerRepository.save(newPlayer);
+        playerRepository.isNameTaken(playerName);
 
         return newPlayer;
     }
