@@ -58,4 +58,8 @@ public class Stats{
     public int getConstitutionModifier() {
         return getModifier(this.constitution);
     }
+    
+    public int getDexterityModifier(){
+        return getModifier(this.dexterity);
+    }
 }
