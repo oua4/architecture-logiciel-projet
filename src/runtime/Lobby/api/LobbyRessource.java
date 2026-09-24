@@ -1,4 +1,4 @@
-package src.runtime.Lobby.api;
+package runtime.Lobby.api;
 
 public class LobbyRessource {
 }

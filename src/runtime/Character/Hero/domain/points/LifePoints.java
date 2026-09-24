@@ -22,5 +22,13 @@ public class LifePoints {
         return this.currentLifePoints >= 1;
     }
 
+    public int getCurrentLifePoints(){
+        return this.currentLifePoints;
+    }
+
+    public int getMaxLifePoints(){
+        return this.maxLifePoints;
+    }
+
     //takeDamage et heal à venir
 }

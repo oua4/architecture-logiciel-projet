@@ -1,6 +1,6 @@
-package src.runtime.Lobby.domain;
+package runtime.Lobby.domain;
 
-import src.runtime.Lobby.domain.exceptions.NumberHeroesExceedMaximum;
+import runtime.Lobby.domain.exceptions.NumberHeroesExceedMaximum;
 
 public class Lobby {
     private String[] lobby;
