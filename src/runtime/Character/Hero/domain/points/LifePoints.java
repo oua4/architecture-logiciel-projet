@@ -33,5 +33,5 @@ public class LifePoints {
         }
     }
 
-    //takeDamage et heal à venir
+    //takeDamage à venir
 }

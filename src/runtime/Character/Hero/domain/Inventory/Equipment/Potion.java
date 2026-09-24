@@ -1,6 +1,5 @@
 package runtime.Character.Hero.domain.Inventory.Equipment;
 
-import runtime.Character.Hero.domain.heroCharacteristics.Stats;
 import runtime.Character.Hero.domain.points.LifePoints;
 
 public class Potion {
