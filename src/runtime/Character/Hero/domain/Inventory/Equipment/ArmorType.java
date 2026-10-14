@@ -12,4 +12,15 @@ public enum ArmorType {
         this.baseValue = baseValue;
         this.addsDexterityModifier = addsDexterityModifier;
     }
+
+    public ArmorClass armorClassFor(int dexterityModifier) {
+        int bonus;
+
+        if (addsDexterityModifier) {
+            bonus = dexterityModifier;
+        } else {
+            bonus = 0;
+        }
+        return new ArmorClass(baseValue, bonus);
+    }
 }
