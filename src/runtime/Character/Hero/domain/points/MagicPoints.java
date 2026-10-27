@@ -11,5 +11,9 @@ public class MagicPoints {
         this.currentMagicPoints = this.maxMagicPoints;
     }
 
+    public int getCurrentMagicPoints() {
+        return currentMagicPoints;
+    }
+
     //Il faut pouvoir lancer les sorts pour continuer
 }

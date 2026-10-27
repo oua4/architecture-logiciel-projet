@@ -41,4 +41,7 @@ public class Hero {
     public int getLevel() {
         return level;
     }
+    public int getCurrentMp() {
+        return magicPoints.getCurrentMagicPoints();
+    }
 }
