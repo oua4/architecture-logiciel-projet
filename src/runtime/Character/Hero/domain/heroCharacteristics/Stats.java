@@ -52,14 +52,24 @@ public class Stats{
     }
 
     public int getModifier(int stat) {
+
         return Math.floorDiv(stat - 10, 2);
     }
 
     public int getConstitutionModifier() {
+
         return getModifier(this.constitution);
     }
     
     public int getDexterityModifier(){
         return getModifier(this.dexterity);
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getDexterity() {
+        return dexterity;
     }
 }
