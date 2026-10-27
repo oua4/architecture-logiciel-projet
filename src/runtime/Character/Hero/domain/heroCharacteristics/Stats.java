@@ -18,7 +18,7 @@ public class Stats{
 
     private void validateStats(int... stats) {
         for (int stat : stats) {
-            if (stat < 0 || stat > 20) {
+            if (stat < 3 || stat > 18) {
                 throw new StatNumberInvalidException();
             }
         }
