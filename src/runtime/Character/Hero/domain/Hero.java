@@ -10,6 +10,7 @@ import runtime.Character.Hero.domain.heroCharacteristics.Stats;
 import java.util.UUID;
 
 public class Hero {
+    private int level;
     private LifePoints lifePoints;
     private MagicPoints magicPoints;
     private UUID heroUuid;
@@ -19,6 +20,7 @@ public class Hero {
     private Stats stats;
 
     public Hero(UUID heroUuid, Name name, Species species, Type type, Stats stats) {
+        this.level = 1;
         this.lifePoints = new LifePoints(type, stats);
         this.magicPoints = new MagicPoints(type);
         this.heroUuid = heroUuid;
@@ -34,5 +36,9 @@ public class Hero {
 
     public int getCurrentHp() {
         return lifePoints.getCurrentLifePoints();
+    }
+
+    public int getLevel() {
+        return level;
     }
 }
