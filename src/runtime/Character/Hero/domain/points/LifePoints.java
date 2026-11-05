@@ -9,7 +9,7 @@ public class LifePoints {
     private int healAmount; // résultat des dés + 2
 
     public LifePoints(Type type, Stats stats) {
-        int maxPoints = type.getBaseLifePoints() + stats.getModifier(stats.getConstitutionModifier());
+        int maxPoints = type.getBaseLifePoints() + stats.getConstitutionModifier();
         this.maxLifePoints = Math.max(1, maxPoints);
 
         this.currentLifePoints = this.maxLifePoints;
@@ -31,6 +31,9 @@ public class LifePoints {
         if(!isExcessHealing()){
             currentLifePoints += this.healAmount;
         }
+    }
+    public int getCurrentLifePoints() {
+        return currentLifePoints;
     }
 
     //takeDamage à venir

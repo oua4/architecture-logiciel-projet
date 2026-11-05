@@ -18,7 +18,7 @@ public class Stats{
 
     private void validateStats(int... stats) {
         for (int stat : stats) {
-            if (stat < 0 || stat > 20) {
+            if (stat < 3 || stat > 18) {
                 throw new StatNumberInvalidException();
             }
         }
@@ -52,14 +52,24 @@ public class Stats{
     }
 
     public int getModifier(int stat) {
+
         return Math.floorDiv(stat - 10, 2);
     }
 
     public int getConstitutionModifier() {
+
         return getModifier(this.constitution);
     }
     
     public int getDexterityModifier(){
         return getModifier(this.dexterity);
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getDexterity() {
+        return dexterity;
     }
 }
