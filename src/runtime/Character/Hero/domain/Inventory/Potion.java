@@ -1,4 +1,4 @@
-package runtime.Character.Hero.domain.Inventory.Equipment;
+package runtime.Character.Hero.domain.Inventory;
 
 import runtime.Character.Hero.domain.points.LifePoints;
 
